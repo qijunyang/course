@@ -1,0 +1,27 @@
+{
+  "name": "demo-web-app",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "",
+  "homepage": "https://github.com/qijunyang/course#readme",
+  "license": "ISC",
+  "main": "./server.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://qijunyang@github.com/qijunyang/course.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "dev": "node ./server.js"
+  },
+  "bugs": {
+    "url": "https://github.com/qijunyang/course/issues"
+  }
+}
