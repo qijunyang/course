@@ -29,7 +29,12 @@ app.get('/userlist', function (req, res) {
       });
     }
 
-    http.request(options, callback).end();
+    const request = http.request(options, callback).end();
+
+    request.on('error', function(err) {
+        res.send(err);
+    });
+
 })
 
 app.listen(config.port, () => {
