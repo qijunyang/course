@@ -1,13 +1,37 @@
 const express = require('express')
 const app = express()
-const port = 3000
-
+const config = require('./config');
 app.use(express.static('public'))
 
 app.get('/userlist', function (req, res) {
-    res.send('this is a user list.')
+    var http = require('http');
+    const url = config.api.user;
+    const urlSplit = url.split(":");
+    const port = urlSplit[urlSplit.length - 1];
+    urlSplit.length = urlSplit.length - 1;
+    var options = {
+      host: urlSplit.join(""),
+      path: '/userlist',
+      port
+    };
+
+    const callback = function(response) {
+      var str = '';
+
+      //another chunk of data has been received, so append it to `str`
+      response.on('data', function (chunk) {
+        str += chunk;
+      });
+
+      //the whole response has been received, so we just print it out here
+      response.on('end', function () {
+        res.json(JSON.parse(str));
+      });
+    }
+
+    http.request(options, callback).end();
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+app.listen(config.port, () => {
+  console.log(`Example app listening at http://localhost:${config.port}`)
 })
