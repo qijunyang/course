@@ -1,11 +1,11 @@
 {
-  "name": "dummy-app",
+  "name": "demo-rest-app",
   "version": "0.0.0",
   "description": "> TODO: description",
   "author": "",
   "homepage": "https://github.com/qijunyang/course#readme",
   "license": "ISC",
-  "main": "lib/dummy-app.js",
+  "main": "lib/demo-rest-app.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
