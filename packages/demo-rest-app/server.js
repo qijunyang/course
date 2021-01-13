@@ -4,12 +4,11 @@ const config = require("./config");
 
 app.use(express.static('public'))
 
-
 app.get('/', function (req, res) {
   res.send('rest app.')
 })
 
-app.get('/userlist', function (req, res) {
+app.get('/api/userlist', function (req, res) {
     res.json([{name: "Jacky"}, {name: "Tom"}])
 })
 
