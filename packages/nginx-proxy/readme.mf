@@ -1,0 +1,1 @@
+`nginx -c /Users/qyang/code/all/course/packages/nginx-proxy/nginx.conf`
